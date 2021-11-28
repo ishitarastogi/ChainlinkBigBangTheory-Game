@@ -165,6 +165,7 @@ contract BigBangTheory is ERC721URIStorage, VRFConsumerBase, Ownable {
   function findResult() public {
     if (pennyCount == sheldonCount) {
       emit result("IT'S A TIE", pennyCount);
+      return;
     }
     if (
       keccak256(abi.encodePacked(chooseOneCharacter)) ==
@@ -175,6 +176,7 @@ contract BigBangTheory is ERC721URIStorage, VRFConsumerBase, Ownable {
       } else {
         emit result("Chosen penny:YOU LOOSE", pennyCount);
       }
+      return;
     }
     if (
       keccak256(abi.encodePacked(chooseOneCharacter)) ==
@@ -185,6 +187,7 @@ contract BigBangTheory is ERC721URIStorage, VRFConsumerBase, Ownable {
       } else {
         emit result("Chosen sheldon:YOU Loose", sheldonCount);
       }
+      return;
     }
   }
 }
