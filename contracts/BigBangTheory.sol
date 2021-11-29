@@ -104,7 +104,7 @@ contract BigBangTheory is ERC721URIStorage, VRFConsumerBase, Ownable {
     arr[1] = "Sheldon";
 
     string memory characterName;
-    for (uint256 i = 0; i < arr.length; i++) {
+    for (uint256 i = 0; i<=characters.length; i++) {
       characterName = arr[i];
     }
     uint256 emphatic = randomNumber % 100;
